@@ -23,7 +23,7 @@ Procedure to run:
   To Sign in through Google ,you can use any of the following urls:
   http://127.0.0.1:8000/
   
-  localhost:80000/
+  localhost:8000/
   
   To Sign In Through GitHub use the following url in your browser:
   localhost:8000/
