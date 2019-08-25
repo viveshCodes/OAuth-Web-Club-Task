@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+<h1>Signup Page</h1>
+<form class="site-form" action="index.html" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Sign Up">
+</form>
+<br>
+
+  {% if user.is_authenticated %}
+    <form class="logout-link" action="{% url 'account:signout'%}" method="POST">
+        {% csrf_token %}
+        <button type="submit">SIGN OUT</button>
+
+    </form>
+  {% endif %}
+{% endblock %}

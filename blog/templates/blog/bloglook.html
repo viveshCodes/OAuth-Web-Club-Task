@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% block content %}
+<a href="" class="btn btn-success" role="button">SIGN OUT </a>
+<div class="blog-look">
+    {% for look in looks %}
+    <div class="look">
+        <h1>{{ look.title}}</h1>
+        <h2>{{look.slug}}</h2>
+        <br>
+        <p>{{look.body}}</p>
+        <img src="{{look.pic.url}}">
+
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+

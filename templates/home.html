@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html >
+{% load pwa %}
+{% load static from staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Project of WebClub : Home</title>
+    {% progressive_web_app_meta %}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+     <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+
+
+	{% if user.is_authenticated %}
+
+<main class="text-center py-5">
+
+    <div class="container" style="height:40px;width:100%">
+        <div class="row">
+            <div class="col-md-12">
+<!-- MODAL -->
+<div class="container">
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Sign Out</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Out</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please Clear Your Browser Cookies To Sign Out.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+                </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+<!-- WEB CLUB IMAGE -->
+
+    <div class="view intro hm-purple-light" style="height: 650px;"></div>
+
+
+
+<main class="text-center py-5">
+
+    <div class="container" style="height:40px;width:100%">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+
+
+
+	{% endif %}
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html >
+{% load pwa %}
+{% load static from staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Project of WebClub : Authentication</title>
+    {% progressive_web_app_meta %}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+     <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+
+{% block content%}
+
+{% endblock %}
+
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="1"></li>
+    <li data-target="#bs-carousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slide-1"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>WEB ENTHUSIAST CLUB </h1>
+            <h3>SIGN IN THROUGH GOOGLE TO KNOW US</h3>
+        </hgroup>
+          <a href ="{% url 'social:begin' 'google-oauth2' %}"class="btn btn-hero btn-lg" role="button">Sign In With Google</a>
+            <a href ="{% url 'social:begin' 'github' %}"class="btn btn-default btn-lg" role="button">Sign In With GitHub</a>
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>GOOGLE DEVELOPER STUDENT CLUB</h1>
+            <h3>WEB ENTHUSIAST'S CLUB -DEVELOPMENT SIG IS GOOGLE DEVELOPER STUDENT CLUB || SIGN IN FOR INFO</h3>
+        </hgroup>
+           <a href ="{% url 'social:begin' 'google-oauth2' %}"class="btn btn-hero btn-lg" role="button">Sign In With Google</a>
+           <a href ="{% url 'social:begin' 'github' %}"class="btn btn-default btn-lg" role="button">Sign In With GitHub</a>
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>SOCIAL OAuth Task</h1>
+            <h3>Sign in to know about the Task</h3>
+        </hgroup>
+           <a href ="{% url 'social:begin' 'google-oauth2' %}"class="btn btn-hero btn-lg" role="button">Sign In With Google</a>
+           <a href ="{% url 'social:begin' 'github' %}"class="btn btn-default btn-lg" role="button">Sign In With GitHub</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
+
+
+</body>
+</html>
